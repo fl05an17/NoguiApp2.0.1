@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/card"
+    android:layout_width="170dp"
+    android:layout_height="250dp"
+    android:orientation="vertical"
+    android:layout_margin="10dp"
+    app:cardCornerRadius="6dp">
+
+    <TextView
+        android:id="@+id/tvTitulo_N"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="TITULO"
+        android:layout_margin="20dp"/>
+
+    <TextView
+        android:id="@+id/tvDescr_N"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="DESCRIPCION"
+        android:layout_margin="40dp"/>
+
+    <TextView
+        android:id="@+id/tvFecha"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="FECHA"
+        android:layout_margin="60dp"/>
+
+    <CheckBox
+        android:id="@+id/cbNotePenidente"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="CheckBox"
+        android:layout_marginTop="100dp"/>
+</androidx.cardview.widget.CardView>

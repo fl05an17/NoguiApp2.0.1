@@ -31,7 +31,7 @@
                     android:layout_gravity="center_horizontal"
                     android:layout_marginTop="10dp"
 
-                    app:srcCompat="@drawable/cana" />
+                    app:srcCompat="@drawable/cana_azucar" />
 
                 <TextView
                     android:id="@+id/tvCultivoName"

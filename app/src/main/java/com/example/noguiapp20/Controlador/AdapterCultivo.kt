@@ -33,11 +33,11 @@ class AdapterCultivo(val mCtx : Context, val notificacionId:Int, private val Not
 
         //seleccion de foto dependiendo del tipo de tarea
 
-      /*  when(foto_id){
-            1 -> foto.setImageResource(R.drawable.maiz)
-            2 -> foto.setImageResource(R.drawable.cana)
-            3 -> foto.setImageResource(R.drawable.chile)
-            else -> foto.setImageResource(R.drawable.maiz)
+        /*when(foto_id){
+            1 -> foto.setImageResource(R.drawable.maiz_c)
+            2 -> foto.setImageResource(R.drawable.cana_azucar)
+            3 -> foto.setImageResource(R.drawable.chile_rojo)
+            else -> foto.setImageResource(R.drawable.maiz_c)
         }*/
 
         return view

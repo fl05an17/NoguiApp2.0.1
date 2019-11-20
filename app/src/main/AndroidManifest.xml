@@ -9,10 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".Notas.ActividadNotas"></activity>
         <activity
             android:name=".LateralMenu"
             android:label="@string/title_activity_lateral_menu"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".InfoCultivo" />
         <activity android:name=".Home" />
         <activity android:name=".ActivityProfile" />
