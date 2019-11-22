@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    android:orientation="vertical"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbarlocal"
+        android:layout_width="match_parent"
+        android:layout_height="35dp"
+        android:background="@color/cards_background"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@null"
+        android:id="@+id/titleET"
+        android:inputType="textCapSentences"
+        android:focusedByDefault="true"
+        android:padding="5dp"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="16dp"
+        android:hint="Title"
+        android:fontFamily="@font/arial_rounded_mt_bold"
+        />
+
+
+    <EditText
+        android:id="@+id/textET"
+        android:layout_width="match_parent"
+        android:layout_height="261dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginBottom="16dp"
+        android:background="@null"
+        android:fontFamily="@font/sego_ui_regular"
+        android:gravity="start"
+        android:hint="Note"
+        android:inputType="textMultiLine"
+        android:padding="5dp"
+        android:textSize="16sp" />
+    <TextView
+        android:id="@+id/IDcolor"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="#0000"
+        android:visibility="invisible" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btnAgregarN"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="320dp"
+        android:layout_marginTop="290dp"
+        android:background="@drawable/ic_add_circle"
+        android:src="@android:drawable/ic_menu_add">
+
+    </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+</LinearLayout>

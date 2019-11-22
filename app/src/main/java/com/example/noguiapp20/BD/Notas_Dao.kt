@@ -13,6 +13,9 @@ interface Notas_Dao {
     @Query("select *from Notas_Entity WHERE idNota = (:notaId)")
     fun loadAllByIds(notaId: Int): List<Notas_Entity>
 
+    @Query("delete from Notas_Entity WHERE idNota = (:notaId)")
+    fun deletebyId(notaId: Int)
+
     @Delete
     fun delData (not : Notas_Entity)
 

@@ -1,14 +1,18 @@
 package com.example.noguiapp20.Notas
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.view.Menu
+import android.view.MenuItem
 import android.widget.GridView
 import android.widget.ViewSwitcher
 import androidx.appcompat.widget.Toolbar
 import androidx.room.Room
+import com.example.noguiapp20.ActividadNotaLocal
 import com.example.noguiapp20.BD.AppDB
+import com.example.noguiapp20.BD.Notas_Entity
 import com.example.noguiapp20.Controlador.NotaAdapter
 import com.example.noguiapp20.Objects.Notas
 import com.example.noguiapp20.R
@@ -28,16 +32,55 @@ class ActividadNotas : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_actividad_notas)
 
-        grid_view = findViewById(R.id.notesRV)
-       // viewSwitcher = findViewById(R.id.switchView)
         var toolbar = findViewById<Toolbar>(R.id.toolbarlocal)
         setSupportActionBar(toolbar)
+
+        var actionBar = supportActionBar
+        actionBar?.setDisplayHomeAsUpEnabled(true)
+
+
+        grid_view = findViewById(R.id.notesRV)
+       // viewSwitcher = findViewById(R.id.switchView)
 
         db = Room.databaseBuilder(applicationContext, AppDB::class.java, "KGDB").build()
 
         lista = mutableListOf()
         lista?.clear()
+
+     /*   Thread{
+            var nota = Notas_Entity()
+            nota.titulo = "prueba"
+            nota.descr_n = "esto es una prueba"
+            nota.fecha = "01-01-2019"
+            nota.realizada = true
+            nota.color = 1
+            db?.NotasDao()?.savaNota(nota)
+        }.start()
+
+*/
         CargaDatos()
+
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+            menuInflater.inflate(R.menu.notalocal,menu)
+        return super.onCreateOptionsMenu(menu)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        when(item?.itemId){
+            android.R.id.home -> {
+                finish()
+                return true
+            }
+            R.id.menu_add_notalocal ->{
+                var intent = Intent(this,ActividadNotaLocal::class.java)
+                intent.putExtra("id","nueva")
+                startActivity(intent)
+                return true
+            }
+            else ->{return super.onOptionsItemSelected(item)}
+        }
     }
     override fun onResume() {
         super.onResume()

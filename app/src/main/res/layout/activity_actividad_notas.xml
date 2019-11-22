@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".Notas.ActividadNotas">
 
-    <?xml version="1.0" encoding="utf-8"?>
+
     <RelativeLayout
         app:layout_constraintHeight_default="percent"
         android:layout_width="match_parent"

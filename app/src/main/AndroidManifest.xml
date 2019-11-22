@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Notas.ActividadNotas"></activity>
+        <activity android:name=".ActividadNotaLocal" android:parentActivityName=".Notas.ActividadNotas">
+
+        </activity>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".LateralMenu"
             android:label="@string/title_activity_lateral_menu"
@@ -19,7 +22,7 @@
         <activity android:name=".ActivityProfile" />
         <activity android:name=".Registro" />
         <activity android:name=".inicio" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".Notas.ActividadNotas">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
