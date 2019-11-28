@@ -14,21 +14,22 @@
         android:background="@color/cards_background"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
+
     <EditText
+        android:id="@+id/titleET"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:background="@null"
-        android:id="@+id/titleET"
-        android:inputType="textCapSentences"
-        android:focusedByDefault="true"
-        android:padding="5dp"
-        android:textColor="@color/colorPrimary"
         android:layout_marginBottom="16dp"
-        android:hint="Title"
+        android:background="@null"
+        android:focusedByDefault="true"
         android:fontFamily="@font/arial_rounded_mt_bold"
-        />
+        android:hint="@string/titulo_agg_nota"
+        android:inputType="textCapSentences"
+        android:padding="5dp"
+        android:textColor="@color/intro_title_color"
+        android:textSize="20sp" />
 
 
     <EditText
@@ -41,14 +42,26 @@
         android:background="@null"
         android:fontFamily="@font/sego_ui_regular"
         android:gravity="start"
-        android:hint="Note"
+        android:hint="@string/desc_agg_nota"
         android:inputType="textMultiLine"
         android:padding="5dp"
         android:textSize="16sp" />
+
+    <TextView
+        android:id="@+id/tvFechaNota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/arial_rounded_mt_bold"
+        android:hint="@string/fecha_agg_nota"
+        android:padding="5dp"
+        android:textColor="@color/intro_title_color" />
+
     <TextView
         android:id="@+id/IDcolor"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:layout_marginBottom="16dp"
         android:text="#0000"
         android:visibility="invisible" />
 

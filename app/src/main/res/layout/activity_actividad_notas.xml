@@ -18,7 +18,7 @@
     <GridView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@id/fakeAppbarRL"
+
         android:layout_below="@id/toolbarlocal"
 
         android:paddingStart="8dp"
@@ -36,52 +36,6 @@
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
 
             app:popupTheme="@style/ThemeOverlay.AppCompat.Light" />
-
-        <RelativeLayout
-            android:id="@+id/fakeAppbarRL"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-
-            android:layout_alignParentBottom="true"
-            android:background="@null"
-            android:clickable="true">
-
-            <EditText
-                android:id="@+id/txNota"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:layout_marginLeft="8dp"
-                android:layout_marginEnd="50dp"
-                android:layout_marginRight="8dp"
-
-                android:drawablePadding="30dp"
-                android:fontFamily="@font/arial_rounded_mt_bold"
-                android:hint="Escribe una nota"
-                android:inputType="text"
-                android:padding="10dp"
-                android:textAlignment="center"
-                android:textAllCaps="true"
-                android:textColor="@color/cardview_dark_background"
-                android:textColorLink="@color/colorPrimary"
-                android:textStyle="bold|italic" />
-
-            <Button
-                android:id="@+id/btnNota"
-
-                android:layout_width="40dp"
-                android:layout_height="40dp"
-                android:layout_alignParentEnd="true"
-                android:layout_centerVertical="true"
-                android:layout_marginEnd="8dp"
-                android:layout_marginBottom="8dp"
-                android:background="@drawable/ic_add_circle"
-                android:elevation="24dp"
-                android:layout_alignParentRight="true"
-                android:layout_marginRight="8dp" />
-
-
-        </RelativeLayout>
 
 
     </RelativeLayout>

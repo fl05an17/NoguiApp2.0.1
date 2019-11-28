@@ -1,5 +1,6 @@
 package com.example.noguiapp20
 
+import android.app.DatePickerDialog
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -15,12 +16,15 @@ import com.example.noguiapp20.BD.AppDB
 import com.example.noguiapp20.BD.Notas_Entity
 import com.example.noguiapp20.Objects.Notas
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+import kotlinx.android.synthetic.main.activity_actividad_nota_local.*
+import java.util.*
 
 class ActividadNotaLocal : AppCompatActivity() {
     var grid_view: GridView? = null
     var titulo: EditText? = null
     var texto:EditText? = null
     var color: TextView? = null
+    var fecha: TextView? = null
     var db: AppDB? = null
     var id:String = ""
     var button:FloatingActionButton? = null
@@ -41,6 +45,23 @@ class ActividadNotaLocal : AppCompatActivity() {
             texto = findViewById(R.id.textET)
             color = findViewById(R.id.IDcolor)
             button = findViewById(R.id.btnAgregarN)
+            fecha = findViewById(R.id.tvFechaNota)
+
+        val cal = Calendar.getInstance()
+        val year = cal.get(Calendar.YEAR)
+        val month = cal.get(Calendar.MONTH)
+        val day = cal.get(Calendar.DAY_OF_MONTH)
+
+        fecha?.setOnClickListener{
+
+            val dpd = DatePickerDialog(this,
+                DatePickerDialog.OnDateSetListener{ view, year, month, day ->
+                    fecha?.text = day.toString()+"/"+month+"/"+year
+            },year,month,day)
+            dpd.show()
+        }
+
+
 
 
         db = Room.databaseBuilder(applicationContext, AppDB :: class.java, "KGDB").build()
@@ -92,6 +113,7 @@ class ActividadNotaLocal : AppCompatActivity() {
                             var note = Notas_Entity()
                             note.titulo = titulo?.text.toString()
                             note.descr_n = texto?.text.toString()
+                            note.fecha = fecha?.text.toString()
                            // note.color = color?.text.toString().toInt()
                             db?.NotasDao()?.updateData(note)
                         }.start()
@@ -112,6 +134,7 @@ class ActividadNotaLocal : AppCompatActivity() {
                 db?.NotasDao()?.loadAllByIds(id.toInt())?.forEach{
                     titulo?.setText(it.titulo)
                     texto?.setText(it.descr_n)
+                    fecha?.setText(it.fecha)
                     //color?.text = it.nota_color.toString()
                 }
 
@@ -125,7 +148,12 @@ class ActividadNotaLocal : AppCompatActivity() {
                 var nota = Notas_Entity()
                 nota.titulo = titulo?.text.toString()
                 nota.descr_n = texto?.text.toString()
-                nota.fecha = "01-01-2019"
+
+                if( tvFechaNota.text == "fecha"){
+                    nota.fecha = "01-01-2019"
+                }else{
+                    nota.fecha = tvFechaNota?.text.toString()
+                }
                 nota.realizada = true
                 nota.color = 1
                 db?.NotasDao()?.savaNota(nota)

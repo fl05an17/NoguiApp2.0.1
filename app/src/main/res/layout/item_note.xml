@@ -10,29 +10,35 @@
 
     <TextView
         android:id="@+id/tvTitulo_N"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="10dp"
         android:text="TITULO"
-        android:layout_margin="20dp"/>
+        android:fontFamily="@font/arial_rounded_mt_bold"/>
 
     <TextView
         android:id="@+id/tvDescr_N"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="DESCRIPCION"
-        android:layout_margin="40dp"/>
+        android:layout_width="150dp"
+        android:layout_height="100dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="40dp"
+        android:text="DESCRIPCION" />
 
     <TextView
         android:id="@+id/tvFecha"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="FECHA"
-        android:layout_margin="60dp"/>
+        android:layout_width="150dp"
+        android:layout_height="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="150dp"
+        android:text="FECHA"/>
 
     <CheckBox
         android:id="@+id/cbNotePenidente"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:text="CheckBox"
-        android:layout_marginTop="100dp"/>
+        android:layout_width="100dp"
+        android:layout_height="25dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="190dp"
+        />
 </androidx.cardview.widget.CardView>
