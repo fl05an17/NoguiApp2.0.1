@@ -22,6 +22,9 @@
     <string name="titulo_mis_culti">Mis Cultivos</string>
     <string name="text_signup">Registrate</string>
     <string name="aun_no_tienes_cuenta">Aun no tienes cuenta?</string>
+    <string name="etiqueta_enfermedades">ENFERMEDADES</string>
+    <string name="etiqueta_plagas">PLAGAS</string>
+    <string name="etiqueta_prod">PRODUCTOS</string>
 
 
     <!--Bottons-->

@@ -11,6 +11,7 @@ import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import android.widget.Button
 import androidx.viewpager.widget.ViewPager
+import com.example.noguiapp20.Home
 import com.example.noguiapp20.Registro
 import com.example.noguiapp20.IntroScreen.IntroViewPagerAdapter
 import com.example.noguiapp20.MainActivity
@@ -44,8 +45,8 @@ class IntroActivity : AppCompatActivity() {
         //when this activity is about to be launch we need to check if its opened before or not
 
         if (restorePrefData()) {
-            val mainActivity = Intent(applicationContext, MainActivity::class.java)
-            startActivity(mainActivity)
+            val introActivity= Intent(applicationContext, MainActivity::class.java)
+            startActivity(introActivity)
             finish()
         }
 
@@ -125,7 +126,7 @@ class IntroActivity : AppCompatActivity() {
         //get started button click listener
         btnGetStart.setOnClickListener {
             //open main activity
-            val mainActivity = Intent(applicationContext, Registro::class.java)
+            val mainActivity = Intent(applicationContext, MainActivity::class.java)
             startActivity(mainActivity)
 
             /*also we need to save a boolean value to storage so next time when the

@@ -59,7 +59,7 @@ class Registro : AppCompatActivity() {
          val user = Usuario(Nombre,Corr,password)
         //ingresa el objeto con respecto de su identificador y retorna un toast cuando este termina
        myDatabase.child(UserId.toString()).setValue(user).addOnCompleteListener{
-            Toast.makeText(this,"Usuario guardada",Toast.LENGTH_LONG).show()
+            Toast.makeText(this,"Usuario guardado",Toast.LENGTH_LONG).show()
         }
 
         Login(Corr, password)

@@ -29,16 +29,16 @@ class AdapterCultivo(val mCtx : Context, val notificacionId:Int, private val Not
 
         texto.text = Cultivos.Name
         //desc.text = Cultivos.Desc
-        var foto_id = Cultivos.Image
+        val foto_id = Cultivos.Image
 
         //seleccion de foto dependiendo del tipo de tarea
 
-        /*when(foto_id){
-            1 -> foto.setImageResource(R.drawable.maiz_c)
-            2 -> foto.setImageResource(R.drawable.cana_azucar)
-            3 -> foto.setImageResource(R.drawable.chile_rojo)
-            else -> foto.setImageResource(R.drawable.maiz_c)
-        }*/
+        when(foto_id){
+            1 -> foto.setImageResource(R.drawable.maiz_icon)
+            2 -> foto.setImageResource(R.drawable.cana_icon)
+            3 -> foto.setImageResource(R.drawable.chile_icon)
+            else -> foto.setImageResource(R.drawable.maiz_icon)
+        }
 
         return view
     }

@@ -37,7 +37,7 @@ class NotaAdapter(var list: List<Notas>) : BaseAdapter() {
 
 
         // Set background color for card view
-       // card.setCardBackgroundColor(nota.color)
+        card.setCardBackgroundColor(nota.color)
 
         // Set a click listener for card view
         card.setOnClickListener{
@@ -51,7 +51,7 @@ class NotaAdapter(var list: List<Notas>) : BaseAdapter() {
             val viewGroup = activity.findViewById<ViewGroup>(android.R.id.content).getChildAt(0)
 
             // Change the root layout background color
-            //viewGroup.setBackgroundColor(nota.color)
+            viewGroup.setBackgroundColor(nota.color)
 
             var intent = Intent(parent.context, ActividadNotaLocal::class.java)
             intent.putExtra("id", nota.idNota.toString())

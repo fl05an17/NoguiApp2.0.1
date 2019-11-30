@@ -13,16 +13,13 @@
 
         </activity>
         <activity android:name=".MainActivity" />
-        <activity
-            android:name=".LateralMenu"
-            android:label="@string/title_activity_lateral_menu"
-            android:theme="@style/AppTheme.NoActionBar" />
         <activity android:name=".InfoCultivo" />
         <activity android:name=".Home" />
         <activity android:name=".ActivityProfile" />
         <activity android:name=".Registro" />
         <activity android:name=".inicio" />
-        <activity android:name=".Notas.ActividadNotas">
+        <activity android:name=".Notas.ActividadNotas"/>
+        <activity android:name=".IntroScreen.IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
