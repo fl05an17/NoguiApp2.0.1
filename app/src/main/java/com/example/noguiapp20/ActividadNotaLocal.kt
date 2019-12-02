@@ -44,7 +44,7 @@ class ActividadNotaLocal : AppCompatActivity() {
             titulo = findViewById(R.id.titleET)
             texto = findViewById(R.id.textET)
             color = findViewById(R.id.IDcolor)
-            button = findViewById(R.id.btnAgregarN)
+
             fecha = findViewById(R.id.tvFechaNota)
 
         val cal = Calendar.getInstance()
@@ -111,6 +111,7 @@ class ActividadNotaLocal : AppCompatActivity() {
                     if(!titulo?.text?.isEmpty()!! && !texto?.text?.isEmpty()!!){
                         Thread {
                             var note = Notas_Entity()
+                            note.idNota = id.toInt()
                             note.titulo = titulo?.text.toString()
                             note.descr_n = texto?.text.toString()
                             note.fecha = fecha?.text.toString()
@@ -154,7 +155,7 @@ class ActividadNotaLocal : AppCompatActivity() {
                 }else{
                     nota.fecha = tvFechaNota?.text.toString()
                 }
-                nota.realizada = true
+                nota.realizada = false
                 nota.color = 1
                 db?.NotasDao()?.savaNota(nota)
                // nota.nota_color = color?.text.toString().toInt()

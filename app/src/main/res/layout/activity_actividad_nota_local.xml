@@ -32,6 +32,16 @@
         android:textSize="20sp" />
 
 
+    <TextView
+        android:id="@+id/tvFechaNota"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:fontFamily="@font/arial_rounded_mt_bold"
+        android:hint="@string/fecha_agg_nota"
+        android:padding="5dp"
+        android:textColor="@color/intro_title_color" />
+
     <EditText
         android:id="@+id/textET"
         android:layout_width="match_parent"
@@ -48,32 +58,11 @@
         android:textSize="16sp" />
 
     <TextView
-        android:id="@+id/tvFechaNota"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="10dp"
-        android:fontFamily="@font/arial_rounded_mt_bold"
-        android:hint="@string/fecha_agg_nota"
-        android:padding="5dp"
-        android:textColor="@color/intro_title_color" />
-
-    <TextView
         android:id="@+id/IDcolor"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginBottom="16dp"
         android:text="#0000"
         android:visibility="invisible" />
-
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/btnAgregarN"
-        android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:layout_marginLeft="320dp"
-        android:layout_marginTop="290dp"
-        android:background="@drawable/ic_add_circle"
-        android:src="@android:drawable/ic_menu_add">
-
-    </com.google.android.material.floatingactionbutton.FloatingActionButton>
 
 </LinearLayout>

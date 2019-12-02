@@ -36,9 +36,9 @@ class AdapterEnfermedades(val mCtx : Context, val notificacionId:Int, private va
 
         when(foto_id){
             1 -> foto.setImageResource(R.drawable.cercosporiosis_chile_uno)
-            2 -> foto.setImageResource(R.drawable.cana_icon)
-            3 -> foto.setImageResource(R.drawable.chile_icon)
-            else -> foto.setImageResource(R.drawable.maiz_icon)
+            2 -> foto.setImageResource(R.drawable.roya_maiz_enfermedad_uno)
+            3 -> foto.setImageResource(R.drawable.enfermedad_cana_uno)
+            else -> foto.setImageResource(R.drawable.cercosporiosis_chile_uno)
         }
 
         return view

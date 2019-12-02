@@ -8,10 +8,14 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.*
 import androidx.cardview.widget.CardView
+import androidx.room.Room
 import com.example.noguiapp20.ActividadNotaLocal
+import com.example.noguiapp20.BD.AppDB
+import com.example.noguiapp20.BD.Notas_Entity
 import com.example.noguiapp20.Home
 import com.example.noguiapp20.Objects.Notas
 import com.example.noguiapp20.R
+import kotlin.concurrent.thread
 
 class NotaAdapter(var list: List<Notas>) : BaseAdapter() {
     override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
@@ -28,7 +32,8 @@ class NotaAdapter(var list: List<Notas>) : BaseAdapter() {
         val fec = view.findViewById<TextView>(R.id.tvFecha)
         val check = view.findViewById<CheckBox>(R.id.cbNotePenidente)
         val card = view.findViewById<CardView>(R.id.card)
-
+        var db: AppDB? = null
+        db = Room.databaseBuilder(parent.context, AppDB::class.java, "KGDB").build()
         // Display color name on text view
         tv.text = nota.titulo
         tx.text = nota.descr_n
@@ -57,6 +62,19 @@ class NotaAdapter(var list: List<Notas>) : BaseAdapter() {
             intent.putExtra("id", nota.idNota.toString())
             parent.context.startActivity(intent)
 
+        }
+
+        check.setOnClickListener {
+            Thread {
+            var objetoNota = Notas_Entity();
+            objetoNota.color = nota.color
+            objetoNota.descr_n = nota.descr_n
+            objetoNota.fecha = nota.fecha
+            objetoNota.idNota = nota.idNota
+            objetoNota.titulo = nota.titulo
+            objetoNota.realizada = check.isChecked
+                db?.NotasDao()?.updateData(objetoNota)
+            }.start()
         }
         // Finally, return the view
         return view

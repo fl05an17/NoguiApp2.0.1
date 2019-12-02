@@ -9,18 +9,23 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Enfermedades.Enfermedades_Detail"></activity>
+        <activity android:name=".MenuLateral.NavigationDrawer"></activity>
+        <activity android:name=".Enfermedades.Enfermedades_Detail" />
         <activity
             android:name=".ActividadNotaLocal"
-            android:parentActivityName=".Notas.ActividadNotas"></activity>
+            android:parentActivityName=".Notas.ActividadNotas" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".InfoCultivo" />
-        <activity android:name=".Home" />
+        <activity
+            android:name=".InfoCultivo"
+            android:parentActivityName=".Enfermedades.Enfermedades_Detail" />
+        <activity
+            android:name=".Home"
+            android:parentActivityName=".InfoCultivo" />
         <activity android:name=".ActivityProfile" />
         <activity android:name=".Registro" />
         <activity android:name=".inicio" />
-        <activity android:name=".Notas.ActividadNotas" />
-        <activity android:name=".IntroScreen.IntroActivity">
+        <activity android:name=".IntroScreen.IntroActivity" />
+        <activity android:name=".Notas.ActividadNotas">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

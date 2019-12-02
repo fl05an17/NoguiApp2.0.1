@@ -14,8 +14,10 @@ class InfoCultivo : AppCompatActivity() {
     lateinit var ref : DatabaseReference
 
 
+
     var sUser:String? = null
     var idCultivo:String? = null
+    var sImage:Int? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,6 +30,7 @@ class InfoCultivo : AppCompatActivity() {
         val intent = intent
         sUser = intent.getStringExtra("idUser")
         idCultivo = intent.getStringExtra("idCultivo")
+        sImage = intent.getIntExtra("imgCultivo",1)
 
 
 
@@ -43,12 +46,21 @@ class InfoCultivo : AppCompatActivity() {
                 tvCultivoName.text = p0.child("Name").getValue().toString()
                 tv_Usr.text = sUser.toString()
                 tv_id_cultivo.text = p0.child("id").getValue().toString()
+
+                when(sImage){
+                    1 -> imgCulP.setImageResource(R.drawable.maiz_icon)
+                    2 -> imgCulP.setImageResource(R.drawable.cana_icon)
+                    3 -> imgCulP.setImageResource(R.drawable.chile_icon)
+                    else -> imgCulP.setImageResource(R.drawable.maiz_icon)
+                }
+
             }
 
         })
 
         cardViewEnfer.setOnClickListener {
-            val intent = Intent(this,Enfermedades_Detail::class.java)
+            val intent= Intent(this,Enfermedades_Detail::class.java)
+            intent.putExtra("nameCult",tvCultivoName.text.toString())
             startActivity(intent)
         }
 

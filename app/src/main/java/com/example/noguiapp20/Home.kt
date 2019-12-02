@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.ListView
 import android.widget.Toast
 import com.example.noguiapp20.Controlador.AdapterCultivo
+import com.example.noguiapp20.Enfermedades.Enfermedades_Detail
 import com.example.noguiapp20.Objects.Cultivo
 import com.google.firebase.database.*
 
@@ -66,10 +67,13 @@ class Home : AppCompatActivity() {
             Toast.makeText(this,CultivoList.get(position).id, Toast.LENGTH_SHORT).show();
             val intent = Intent(this,InfoCultivo::class.java)
             intent.putExtra("idCultivo",CultivoList.get(position).id)
+            intent.putExtra("imgCultivo",CultivoList.get(position).Image)
             intent.putExtra("idUser",sUser)
             startActivity(intent)
 
         }
+
+
 
 
     }
