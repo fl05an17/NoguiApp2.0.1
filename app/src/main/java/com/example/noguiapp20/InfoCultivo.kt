@@ -1,8 +1,10 @@
 package com.example.noguiapp20
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.noguiapp20.Controlador.AdapterCultivo
+import com.example.noguiapp20.Enfermedades.Enfermedades_Detail
 import com.example.noguiapp20.Objects.Cultivo
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_info_cultivo.*
@@ -44,6 +46,11 @@ class InfoCultivo : AppCompatActivity() {
             }
 
         })
+
+        cardViewEnfer.setOnClickListener {
+            val intent = Intent(this,Enfermedades_Detail::class.java)
+            startActivity(intent)
+        }
 
 
 

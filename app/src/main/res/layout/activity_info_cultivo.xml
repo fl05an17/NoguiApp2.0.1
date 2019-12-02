@@ -151,6 +151,7 @@
         app:layout_constraintTop_toBottomOf="@+id/linearLayout">
 
         <androidx.cardview.widget.CardView
+            android:id="@+id/cardViewEnfer"
             android:layout_width="340dp"
             android:layout_height="100dp"
             android:layout_marginLeft="35dp"
@@ -158,7 +159,6 @@
             app:cardCornerRadius="6dp">
 
             <LinearLayout
-                android:id="@+id/cardEnfer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:orientation="horizontal">
